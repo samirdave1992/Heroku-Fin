@@ -86,37 +86,6 @@ cumulative_savings=np.cumsum(forecast_savings)
 x_values=np.arange(forecasted_years+1)
 
 
-fig = go.Figure()
-fig.add_trace(
-        go.Scatter(
-            x=x_values,
-            y=forecast_salary,
-            name="Forecast Salary",
-            text="forecast_salary"
-        )
-    )
-
-fig.add_trace(
-        go.Scatter(
-            x=x_values,
-            y=forecast_expenses,
-            name= "Forecast Expenses"
-        )
-    )
-
-fig.add_trace(
-        go.Scatter(
-                x=x_values,
-                y=cumulative_savings,
-                name= "Forecast Savings"
-            )
-    )
-fig.layout.update(title='Forecast Salary, Expenses & Savings Over the Years',
-                   xaxis_title='Year',
-                   yaxis_title='Amount($)')
-
-st.plotly_chart(fig, use_container_width=True)
-
 st.write(type(x_values))
 st.write(type(forecast_salary))
 st.write(type(forecast_expenses))
